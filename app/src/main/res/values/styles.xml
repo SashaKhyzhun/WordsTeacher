@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <color name="list_grey_bg">#ffffff</color>
+    <color name="reddivider">#FF0000</color>
+    <dimen name="twodp">0dp</dimen>
+
+</resources>

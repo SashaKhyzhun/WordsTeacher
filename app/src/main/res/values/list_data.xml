@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="themes_list">
+
+        <item>Основи</item> //Basic
+        <item>Фрази</item> //Phrases
+        <item>Питання</item> //Questions
+        <item>Одяг</item> //Clothes
+        <item>Їжа</item> //Eat
+        <item>Тварини</item> //Animals
+        <item>Кольори</item> //Colors
+        <item>Отношения</item> //Relationships
+        <item>Машины</item> //Cars
+        <item>Здоровья</item> //HealthCare
+
+    </string-array>
+
+    <xml>
+        <test>
+            <id>1</id>
+            <caption>
+                Короткий тест-опрос
+            </caption>
+            <question>
+                <text>Вы покупаете программы для Android?</text>
+                <answer>
+                    <text>Да</text>
+                    <rate>10</rate>
+                </answer>
+                <answer>
+                <text>Нет</text>
+                    <rate>0</rate>
+                </answer>
+                <answer>
+                    <text>Редко</text>
+                    <rate>1</rate>
+                </answer>
+                <PICTURE>pic2.png</PICTURE>
+            </question>
+            <result>
+                <min>10</min>
+                <max>10</max>
+                <text>Молодчина !</text>
+            </result>
+            <result>
+                <min>1</min>
+                <max>1</max>
+                <text>Нужно поддерживать прогресс, они ж совсем недороги.</text>
+            </result>
+            <result>
+                <min>0</min>
+                <max>0</max>
+                <text>Ой, как не стыдно, халявщики - тормоза прогресса.</text>
+            </result>
+        </test>
+    </xml>
+
+</resources>

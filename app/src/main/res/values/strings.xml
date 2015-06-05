@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Word Teacher</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="answer">Введіть відповідь</string>
+
+    <string name="okButton">OK</string>
+    <string name="cancelButton">Cancel</string>
+
+
+    <string name="onlineTranslate">Перекладач</string>
+    <string name="aboutButton">Про програму</string>
+    <string name="exitButton">Вихід</string>
+
+    <string name="textField">WordTeacher - програма для вивчення англійских слів. Вона включає в себе: \n
+        1. Простий інтерфес  \n
+        2. Змогу налаштовувати зручність \n
+        3. Сам процес вивчення.  \n
+        4. Обновлення тестів \n
+        Якщо у вас є якісь пропозиції або скарги, то звяжіться зі мною</string>
+    <string name="mailField"> sasha6427@gmail.com</string>
+    <string name="backButton">Назад</string>
+    <string name="selectTheme">Виберіть категорію слів, яку бажаєте вчити:</string>
+    <string name="buttonChecked">Get checked items</string>
+    <string name="feedBack">Залишити відгук</string>
+
+
+
+    <string name="note1">You pick</string>
+    <string name="note2">right answers from</string>
+    <string name="note3">Your rating is</string>
+    <string name="startButton">Старт</string>
+    <string name="отзыв">Відгук</string>
+    <string name="submit">Далі</string>
+    <string name="nextQuestion">Наступне питання</string>
+    <string name="restart_quiz">Почати спочатку</string>
+    <string name="goToMainMenu">Увійти</string>
+
+    <string-array name="themes">
+        <item>Основи</item> //SingleListItem
+        <item>Основи 2</item> //BasicTwo
+        <item>Фрази</item> //Phrases
+        <item>Їжа</item> //Eat
+        <item>Тварини</item> //Animals
+        <item>Одяг</item> //Clothes
+        <item>Питання</item> //Questions
+        <item>Кольори</item> //Colors
+        <item>Професії</item> //profession
+        <item>Предмети</item> //RandomSubjects
+        <item>Здоровья</item> //HealthCare
+    </string-array>
+
+    <string-array name="image_id">
+        <item>pic1</item>
+        <item>pic2</item>
+        <item>pic3</item>
+        <item>pic4</item>
+        <item>pic5</item>
+        <item>pic6</item>
+        <item>pic7</item>
+        <item>pic8</item>
+    </string-array>
+
+</resources>
+
+
+

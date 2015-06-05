@@ -1,0 +1,15 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background_menu"
+    >
+
+    <ListView
+        android:id="@+id/list_themes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/reddivider"
+        android:dividerHeight="@dimen/twodp">
+    </ListView>
+
+</RelativeLayout>
