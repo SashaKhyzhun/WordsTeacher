@@ -2,37 +2,127 @@ package app.sashakhyzhun.wordsteacher;
 
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ResultActivity extends Activity {
 
-
     TextView txtResult;
+    SQLiteDatabase db;
+    DBHelper dbHelper = new DBHelper(this);
+    final String DIR = "Tests";
+    final String FILENAME = "Results.txt";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         txtResult = (TextView) findViewById(R.id.tvView);
+        int score = getIntent().getIntExtra("score", 0);
+        int questCount = getIntent().getIntExtra("questCount", 0);
+        ((TextView) findViewById(R.id.tvView)).setText("Ваш результат: " + score + "/" + questCount);
+        saveResult(score, questCount);
 
+        //ggwp
+        SharedPreferences mSharedPreference = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String userName = mSharedPreference.getString("user_name", "");
+        String userSurname = mSharedPreference.getString("user_surname", "");
 
-        //get data from TestActivity
-        Bundle bundle = getIntent().getExtras();
-        String fName = bundle.getString("name");
-        String fSurname = bundle.getString("surname");
+        ContentValues cv = new ContentValues();
+        db = dbHelper.getWritableDatabase();
 
-        int correct = bundle.getInt("correct_answers");
-        int wrong = 10-correct;
-
-
-
-        txtResult.setText("Вітаємо, Ви пройшли тест!\n\n Ваш результат такий:" +
-                "\n Правильних: " + correct + "\n Непрвильних: " + wrong);
+        cv.put(DBHelper.NAME, userName);
+        cv.put(DBHelper.RESULT, score);
+        cv.put(DBHelper.SURNAME, userSurname);
+        db.insert(DBHelper.DATABASE_TABLE, null, cv);
+        float rate = Float.valueOf(score) / Float.valueOf(questCount);
+        String strRate = "";
+        if (rate >= 0.9) {
+            strRate = "Excellent!";
+        }
+        else if ((rate < 0.9) && (rate >= 0.74)) {
+            strRate = "Good!";
+        }
+        else if ((rate < 0.74)&&(rate >= 0.6)) {
+            strRate = "Normal!";
+        }
+        else {
+            strRate = "Bad!";
+        }
+        txtResult.setText("Congratulations, " + userName + "! you made it!\n\n Your score:" +
+                "\n Correct: " + score + "\n Wrong: " + (questCount - score) + "\n\n " +
+                "Your rating: " + strRate);
     }
 
+
+    private void saveResult(int score, int count) {
+        int id = 0;
+
+        File path = new File(Environment.getExternalStorageDirectory() + "/" + DIR + "/");
+        File file = new File(path, FILENAME);
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String str;
+            String s;
+            while ((str = br.readLine()) != null) {
+                s = str.split(" ")[0];
+                id = Integer.valueOf(s);
+                Log.d("Result", str);
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("Result", "FAIL");
+        }
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
+            id++;
+            bw.write(id + " Your score: " + score + "/" + count + "\n");
+            bw.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("Result", "FAIL");
+        }
+    }
+
+
+    public void resultClick(View v) {
+        switch (v.getId()) {
+            case R.id.main_menu:
+               /* Intent main_menu = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(main_menu);*/
+                finish();
+                break;
+            case R.id.results:
+                Intent list = new Intent(getApplicationContext(), SortResult.class);
+                startActivity(list);
+                finish();
+                break;
+            case R.id.new_test:
+                Intent test = new Intent(getApplicationContext(), TestActivity.class);
+                startActivity(test);
+                finish();
+                break;
+            default: break;
+        }
+    }
 
 
     @Override  //параметры меню "инфо"
@@ -40,69 +130,9 @@ public class ResultActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.feedBack) {
-            String appPackageName= getPackageName();
-            Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://mail.google.com/mail/u/0/#drafts?compose=14d29e139700bea6" + appPackageName));
-            marketIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(marketIntent);
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
 
 }
-
-/*    TextView txtResult;
-    TextView tvView;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
-        txtResult = (TextView) findViewById(R.id.result);
-
-
-        Intent intent = getIntent();
-
-        String fName = intent.getStringExtra("fname");
-        String lName = intent.getStringExtra("lname");
-
-        //get data from TestActivity
-        Bundle bundle = getIntent().getExtras();
-        String uname = bundle.getString("name");
-        int correct = bundle.getInt("correct_answers");
-        int wrong = 10-correct;
-
-        txtResult.setText("Вітаємо," + uname + "ви пройшли тест!\n\n Ваш результат такий:" + "\n Правильних: " + correct + "\n Непрвильних: " + wrong);
-    }
-
-
-
-    @Override  //параметры меню "инфо"
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.feedBack) {
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("message/rfc822");
-            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"sasha6427@gmail.com"});
-            i.putExtra(Intent.EXTRA_SUBJECT, "feedback from user :)");
-            i.putExtra(Intent.EXTRA_TEXT, "");
-            try {
-                startActivity(Intent.createChooser(i, "Send mail..."));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
 

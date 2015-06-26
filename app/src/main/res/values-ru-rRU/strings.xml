@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Word Teacher</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="answer">Введите ответ</string>
+
+    <string name="okButton">OK</string>
+    <string name="cancelButton">Cancel</string>
+
+
+    <string name="onlineTranslate">Переводчик</string>
+    <string name="aboutButton">О программе</string>
+    <string name="exitButton">Выход</string>
+
+    <string name="textField">WordTeacher - программа для изучения неизвестных слов.
+        Она включает в себя: \n
+        1. Простой интерфейс  \n
+        2. Добавление и удаление слов \n
+        3. Сортировка и сохраненние данных \n\n
+        Свяжитесь со мной, если есть какие-то предложения</string>
+    <string name="mailField"> sasha6427@gmail.com</string>
+    <string name="backButton">Назад</string>
+    <string name="buttonChecked">Get checked items</string>
+    <string name="feedBack">Оставить отзыв</string>
+
+    <string name="note1">You pick</string>
+    <string name="note2">right answers from</string>
+    <string name="note3">Your rating is</string>
+    <string name="startButton">Старт</string>
+    <string name="отзыв">Отзыв</string>
+    <string name="submit">Далее</string>
+    <string name="nextQuestion">Следующий вопрос</string>
+    <string name="restart_quiz">Начать заново</string>
+    <string name="goToMainMenu">В главное меню</string>
+    <string name="Увійти">Ввойти</string>
+    <string name="Далі">Далее</string>
+    <string name="addNewQuestion">Добавить вопрос</string>
+    <string name="результати">Результаты</string>
+    <string name="спробуватиЩеРаз">Начать заново</string>
+    <string name="вГоловнеМеню">В главное меню</string>
+    <string name="імя">Имя</string>
+    <string name="призвіще">Фамилия</string>
+    <string name="відправитиВідгук">Отправить отзыв</string>
+    <string name="Назад">Назад</string>
+
+    <string name="питання">Вопрос:</string>
+    <string name="відповідь1">Ответ 1</string>
+    <string name="відповідь2">Ответ 2</string>
+    <string name="відповідь3">Ответ 3</string>
+    <string name="відповідь4">Ответ 4</string>
+    <string name="видалитиОстанній">Удалить</string>
+    <string name="додати">Добавить</string>
+
+</resources>
+
+
+

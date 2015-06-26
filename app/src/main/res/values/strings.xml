@@ -15,13 +15,11 @@
 
     <string name="textField">WordTeacher - програма для вивчення англійских слів. Вона включає в себе: \n
         1. Простий інтерфес  \n
-        2. Змогу налаштовувати зручність \n
-        3. Сам процес вивчення.  \n
-        4. Обновлення тестів \n
+        2. Додавання та видалення тестів  \n
+        3. Зберігання та сортування своїх даних \n\n
         Якщо у вас є якісь пропозиції або скарги, то звяжіться зі мною</string>
     <string name="mailField"> sasha6427@gmail.com</string>
     <string name="backButton">Назад</string>
-    <string name="selectTheme">Виберіть категорію слів, яку бажаєте вчити:</string>
     <string name="buttonChecked">Get checked items</string>
     <string name="feedBack">Залишити відгук</string>
 
@@ -36,31 +34,35 @@
     <string name="nextQuestion">Наступне питання</string>
     <string name="restart_quiz">Почати спочатку</string>
     <string name="goToMainMenu">Увійти</string>
+    <string name="Увійти">Увійти</string>
+    <string name="Далі">Далі</string>
+    <string name="addNewQuestion">Додати питання</string>
+    <string name="результати">Результати</string>
+    <string name="спробуватиЩеРаз">Спробувати ще раз</string>
+    <string name="вГоловнеМеню">В головне меню</string>
+    <string name="імя">Ім\'я</string>
+    <string name="призвіще">Призвіще</string>
 
-    <string-array name="themes">
-        <item>Основи</item> //SingleListItem
-        <item>Основи 2</item> //BasicTwo
-        <item>Фрази</item> //Phrases
-        <item>Їжа</item> //Eat
-        <item>Тварини</item> //Animals
-        <item>Одяг</item> //Clothes
-        <item>Питання</item> //Questions
-        <item>Кольори</item> //Colors
-        <item>Професії</item> //profession
-        <item>Предмети</item> //RandomSubjects
-        <item>Здоровья</item> //HealthCare
-    </string-array>
+    <string name="відмінно">Відмінно!</string>
+    <string name="добре">Добре!</string>
+    <string name="задовільно">Задовільно!</string>
+    <string name="погано">Погано!</string>
+    <string name="вітаємо">Вітаємо!</string>
+    <string name="виПройшлиТест">! Ви пройшли тест.</string>
+    <string name="вашРезультатТакий">Ваш результат такий:</string>
+    <string name="правильних">Правильних:</string>
+    <string name="непрвильних">Неправильних:</string>
+    <string name="вашаОцінка">Ваша оцінка:</string>
+    <string name="відправитиВідгук">Відправити відгук</string>
+    <string name="Назад">Назад</string>
+    <string name="питання">Питання:</string>
+    <string name="відповідь1">Відповідь 1</string>
+    <string name="відповідь2">Відповідь 2</string>
+    <string name="відповідь3">Відповідь 3</string>
+    <string name="відповідь4">Відповідь 4</string>
+    <string name="видалитиОстанній">Видалити</string>
+    <string name="додати">Додати</string>
 
-    <string-array name="image_id">
-        <item>pic1</item>
-        <item>pic2</item>
-        <item>pic3</item>
-        <item>pic4</item>
-        <item>pic5</item>
-        <item>pic6</item>
-        <item>pic7</item>
-        <item>pic8</item>
-    </string-array>
 
 </resources>
 

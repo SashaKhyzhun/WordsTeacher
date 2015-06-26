@@ -24,36 +24,26 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-
-    @Override //отвечает за создание меню "info"
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
 
     public void onClick(View v) {
         switch (v.getId()) {
             case startButton:
-                Intent AndroidListViewActivity = new Intent(this, AndroidListViewActivity.class);
-                AndroidListViewActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(AndroidListViewActivity);
-                audioOnClick();
+                Intent TestActivity = new Intent(this, TestActivity.class);
+                TestActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(TestActivity);
                 break;
             case onlineTranslate:
                 Intent onlineTranslate = new Intent(this, TranslateActivity.class);
                 onlineTranslate.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(onlineTranslate);
-                audioOnClick();
                 break;
             case aboutButton:
                 Intent AboutActivity = new Intent(this, AboutActivity.class);
                 AboutActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(AboutActivity);
-                audioOnClick();
                 break;
             case exitButton:
                 moveTaskToBack(true);
@@ -63,7 +53,7 @@ public class MainActivity extends Activity {
             case goToMainMenu:
                 Intent MainActivity = new Intent(this, MainActivity.class);
                 startActivity(MainActivity);
-                audioOnClick();
+                finish();
                 break;
             case feedBackButton:
                 Intent i = new Intent(Intent.ACTION_SEND);
@@ -83,13 +73,11 @@ public class MainActivity extends Activity {
     }
 
 
-
-   public void audioOnClick() {
+    public void audioOnClick() {
         // создаём новый объект mediaPlayer
         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.mipmap.clicksound);
         mediaPlayer.start(); // запускаем воспроизведение
     }
-
 
 
     @Override //параметры меню "инфо"
@@ -97,22 +85,17 @@ public class MainActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.feedBack) {
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("message/rfc822");
-            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"sasha6427@gmail.com"});
-            i.putExtra(Intent.EXTRA_SUBJECT, "feedback from user :)");
-            i.putExtra(Intent.EXTRA_TEXT, "");
-            try {
-                startActivity(Intent.createChooser(i, "Send mail..."));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
-            }
-        }
-
+        Intent addNewQuestion = new Intent(this, AddNewQuestionActivity.class);
+        startActivity(addNewQuestion);
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+
 }

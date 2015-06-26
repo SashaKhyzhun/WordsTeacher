@@ -17,6 +17,7 @@ public class TranslateActivity extends MainActivity {
 
         webview.getSettings().setJavaScriptEnabled(true);
         webview.loadUrl(url);
+        finish();
 
     }
 

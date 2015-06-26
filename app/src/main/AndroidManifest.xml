@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,16 +17,17 @@
 
 
 
-        <activity android:name=".MainActivity"
-            android:label="@string/app_name" >
+        <activity android:name=".LoginActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
+
         </activity>
 
-        <activity android:name=".AndroidListViewActivity"
-            android:label="@string/app_name">
+        <activity android:name=".MainActivity">
         </activity>
 
         <activity android:name=".ResultActivity">
@@ -37,24 +41,21 @@
 
         </activity>
 
-        <activity android:name=".LoginActivity">
-
+        <activity android:name=".TestActivity">
         </activity>
+
+        <activity android:name=".SortResult">
+        </activity>
+
+        <activity android:name=".AddNewQuestionActivity">
+        </activity>
+
+
+
+
 
         <activity android:name=".themes.Basic">
         </activity>
-
-        <activity android:name=".themes.Basic2">
-        </activity>
-
-        <activity android:name=".themes.Phrases">
-        </activity>
-
-        <activity android:name=".themes.Eat">
-        </activity>
-
-
-
 
 
     </application>

@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@mipmap/background_menu"
+    android:background="@mipmap/wall"
     android:orientation="vertical">
 
     <TextView
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:text="New Text"
-            android:id="@+id/txtView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="New Text"
+        android:id="@+id/txtView"
         android:layout_weight="0.65"
         android:layout_gravity="center"
         android:textColor="#000000"
@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New RadioButton"
+            android:textColor="#000000"
             android:id="@+id/radioButton"
             android:checked="false" />
 
@@ -35,18 +36,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New RadioButton"
+            android:textColor="#000000"
             android:id="@+id/radioButton2" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New RadioButton"
+            android:textColor="#000000"
             android:id="@+id/radioButton3" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New RadioButton"
+            android:textColor="#000000"
             android:id="@+id/radioButton4" />
     </RadioGroup>
 
@@ -54,12 +58,16 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="95dp"
-        android:layout_weight="0.03"></LinearLayout>
+        android:layout_weight="0.03">
+
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Далі"
+        android:text="@string/Далі"
+        android:textColor="#000000"
+        android:onClick="onClick"
         android:id="@+id/button_submit"
         />
 
